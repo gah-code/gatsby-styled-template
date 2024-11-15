@@ -1,43 +1,44 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `gatsby-styled-template`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: "gatsby-source-contentful",
       options: {
-        accessToken: 'cO8fVbxmANFRydpFCjUiQcoKsQSK6oZSdn_XZgtXPVI',
-        spaceId: 'rpilh1nqkh8b',
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-mdx',
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-mdx",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
-        path: './src/images/',
+        name: "images",
+        path: "./src/images/",
       },
-      __key: 'images',
+      __key: "images",
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'pages',
-        path: './src/pages/',
+        name: "pages",
+        path: "./src/pages/",
       },
-      __key: 'pages',
+      __key: "pages",
     },
   ],
-};
+}
