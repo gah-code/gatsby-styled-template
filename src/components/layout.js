@@ -1,15 +1,29 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
-import * as React from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
+import styled from "styled-components"
 import Header from "./header"
-import "./layout.css"
+
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full viewport height */
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.text};
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+`
+
+const Content = styled.main`
+  flex-grow: 1; /* Ensures the content grows to fill available space */
+  max-width: ${({ theme }) => theme.sizes.container || "100%"};
+  margin: 0 auto;
+  padding: ${({ theme }) => theme.sizes.gutter || "1rem"};
+`
+
+const Footer = styled.footer`
+  margin-top: ${({ theme }) => theme.sizes.gutter || "2rem"};
+  font-size: ${({ theme }) => theme.fontSizes.small || "0.875rem"};
+  text-align: center;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,28 +37,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <PageWrapper>
+      <Header siteTitle={data.site.siteMetadata?.title || "Title"} />
+      <Content>{children}</Content>
+      <Footer>
+        © {new Date().getFullYear()} &middot; Built with{" "}
+        <a href="https://www.gatsbyjs.com">Gatsby</a>
+      </Footer>
+    </PageWrapper>
   )
 }
 

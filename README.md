@@ -1,49 +1,133 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# **Gatsby Starter Template with Light/Dark Theme, Contentful, and Testing**
 
-## 🚀 Quick start
+This template demonstrates a modern, fully-functional **theming system** built with **Gatsby**, **styled-components**, and other essential tools. The application offers a smooth and responsive user experience, with a focus on **accessibility**, **scalability**, and **developer-friendly practices**. It also integrates **Contentful** as the CMS and includes a robust testing setup to save time on project startup.
 
-1.  **Create a Gatsby site.**
+---
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## **Key Features**
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- **Light/Dark Theme Toggle:**
+  - Fully implemented using `styled-components` and React Context API.
+  - Themes persist across page reloads via `localStorage`.
+  - Dynamically styled for consistent user experience.
 
-2.  **Start developing.**
+- **Contentful CMS Integration:**
+  - Pre-configured to fetch data from Contentful spaces.
+  - Easily adaptable to your Contentful models.
 
-    Navigate into your new site’s directory and start it up.
+- **Comprehensive Testing:**
+  - **Unit Testing:** Jest with `@testing-library/react` for isolated component testing.
+  - **End-to-End Testing:** Cypress for simulating real user interactions.
+  - **Accessibility Testing:** Lighthouse and Axe for automated accessibility checks.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+- **Accessibility-First Design:**
+  - High-contrast themes for improved readability.
+  - Fully responsive and WCAG-compliant.
 
-3.  **Open the code and start customizing!**
+- **Developer-Friendly:**
+  - Modular codebase for scalability.
+  - Pre-configured with essential plugins like `gatsby-plugin-image` and `gatsby-plugin-styled-components`.
 
-    Your site is now running at http://localhost:8000!
+---
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## **Tech Stack**
 
-4.  **Learn more**
+- **Frontend Framework:**
+  - Gatsby (React-based static site generator)
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- **Styling:**
+  - `styled-components` for dynamic theming and CSS-in-JS support.
 
-## 🚀 Quick start (Netlify)
+- **Content Management:**
+  - Contentful (GraphQL-based CMS integration)
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+- **Testing Tools:**
+  - Jest and React Testing Library for unit testing.
+  - Cypress for end-to-end testing.
+  - Axe and Lighthouse for accessibility testing.
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+---
+
+## **Getting Started**
+
+### **1. Clone the Repository**
+
+```bash
+git clone <repository-url>
+cd <repository-name>
+```
+
+### **2. Install Dependencies**
+
+```bash
+npm install
+```
+
+### **3. Add Contentful Credentials**
+
+Set up your Contentful credentials in a `.env` file:
+
+```bash
+CONTENTFUL_SPACE_ID=your_space_id
+CONTENTFUL_ACCESS_TOKEN=your_access_token
+```
+
+### **4. Run the Development Server**
+
+```bash
+gatsby develop
+```
+
+### **5. View the App**
+
+Visit `http://localhost:8000` to view the app in your browser.
+
+---
+
+## **Testing**
+
+### **Unit Testing with Jest**
+
+Run all unit tests:
+
+```bash
+npm test
+```
+
+### **End-to-End Testing with Cypress**
+
+Run the Cypress test runner:
+
+```bash
+npm run cypress:open
+```
+
+### **Accessibility Testing**
+
+Use Lighthouse (in Chrome DevTools) or Axe (via Jest integration) for automated checks.
+
+---
+
+## **Customization**
+
+### **Update Contentful Integration**
+
+Modify the GraphQL queries in `src/pages` or components to suit your Contentful models.
+
+### **Add More Themes**
+
+Expand the `src/styles/theme.js` file to include additional themes or modify existing ones.
+
+---
+
+## **Contributing**
+
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+
+---
+
+## **License**
+
+This project is licensed under the MIT License.
+
+---

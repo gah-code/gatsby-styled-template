@@ -16,6 +16,10 @@ export const lightTheme = {
     medium: "16px",
     large: "24px",
   },
+  sizes: {
+    container: "800px", // Add the container size
+    gutter: "1rem", // Add the gutter size
+  },
 }
 
 export const darkTheme = {
@@ -29,4 +33,5 @@ export const darkTheme = {
   },
   fonts: lightTheme.fonts,
   fontSizes: lightTheme.fontSizes,
+  sizes: lightTheme.sizes, // Ensure darkTheme also inherits sizes
 }
