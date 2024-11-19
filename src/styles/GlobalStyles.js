@@ -36,6 +36,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
 
+  
+
   p {
     line-height: 1.6;
     margin: 0 0 1rem;
@@ -49,5 +51,8 @@ h1, h2, h3, h4, h5, h6 {
       color: ${({ theme }) => theme.colors.highlight};
     }
   }
+
+
+  
   /* Additional reset or base styles */
 `

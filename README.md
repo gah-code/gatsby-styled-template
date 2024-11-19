@@ -48,6 +48,37 @@ This template demonstrates a modern, fully-functional **theming system** built w
 
 ---
 
+### Typography Tests and Updates
+
+## Overview
+
+This document outlines the testing process for ensuring consistent colors across typography components (`H1`, `H2`, `H3`, and `P`) in a React project styled with `styled-components`. The typography components use a shared `ThemeProvider` to dynamically apply styles from the `lightTheme`.
+
+---
+
+## Typography Updates
+
+### Typography Components
+
+The typography components (`H1`, `H2`, `H3`, and `P`) are styled to use dynamic colors and font sizes defined in the `theme`. Each component's styles are consistent with the `lightTheme` configuration:
+
+```javascript
+export const lightTheme = {
+  colors: {
+    primary: "#2A3439",
+    secondary: "#6C3082",
+    highlight: "#e3b567",
+    text: "#333",
+  },
+  fontSizes: {
+    heading: { xs: "24px", sm: "28px", md: "32px", lg: "36px" },
+    subheading: { xs: "20px", sm: "22px", md: "24px", lg: "26px" },
+    paragraph: { xs: "14px", sm: "16px", md: "18px", lg: "20px" },
+  },
+};
+
+---
+
 ## **Getting Started**
 
 ### **1. Clone the Repository**
