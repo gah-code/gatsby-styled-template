@@ -77,7 +77,7 @@ export const darkTheme = {
   space: lightTheme.space, // Ensure darkTheme inherits space
 }
 
-const media = breakpoints => {
+export const media = breakpoints => {
   return Object.keys(breakpoints).reduce((acc, label) => {
     acc[label] = styles => `
       @media (min-width: ${breakpoints[label]}) {
